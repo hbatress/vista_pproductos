@@ -1,17 +1,18 @@
 // filepath: /H:/PROYECTOS/vista trabajo/vistas/src/router.js
-import Vue from 'vue';
-import Router from 'vue-router';
-import Home from './views/Home.vue';
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from './views/HomeView.vue';
 
-Vue.use(Router);
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
+  }
+];
 
-export default new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    }
-  ]
+const router = createRouter({
+  history: createWebHistory(),
+  routes
 });
+
+export default router;
